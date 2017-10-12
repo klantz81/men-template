@@ -49,9 +49,9 @@ app.get('/admin', function (req, res) {
 MongoClient.connect("mongodb://localhost:27017/site", function(err, database) {
 	if (err) throw err;
 	db = database;
-	
+
 	io.on('connection', function (socket) {
-		console.log("connected" + socket);
+		console.log("connected - " + socket.id);
 	});
 
 	http.listen(3000, function(){
