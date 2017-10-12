@@ -1,0 +1,58 @@
+{
+  "name": "es6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "watch": {
+    "after-build": "dist/{site,admin}.js",
+    "after-update": {
+      "patterns": [
+        "*"
+      ],
+      "extensions": "php,html,jpg,png,gif,svg"
+    },
+    "after-server": "index.js"
+  },
+  "scripts": {
+    "after-build": "echo `date` > assets/watcher/watcher.ts",
+    "after-update": "echo `date` > assets/watcher/watcher.ts",
+    "after-server": "echo `date` > assets/watcher/watcher.ts",
+    "build": "webpack",
+    "start": "concurrently --kill-others \"webpack --watch --cache\" \"npm-watch\" \"node assets/watcher/watcher.js\" \"forever -w ./index.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "concurrently": "^3.5.0",
+    "css-loader": "^0.28.4",
+    "express": "^4.15.5",
+    "file-loader": "^0.11.2",
+    "forever": "^0.15.3",
+    "http-server": "^0.10.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.13",
+    "node-sass": "^4.5.3",
+    "npm-watch": "^0.2.0",
+    "sass-loader": "^6.0.6",
+    "socket.io": "^2.0.3",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.4.1"
+  },
+  "dependencies": {}
+}
