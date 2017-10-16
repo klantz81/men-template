@@ -1,4 +1,30 @@
 @base: #B04C2D;
+@border: #CCCCCC;
+@white: #FFFFFF;
+
+body {
+        font-family: 'Roboto', sans-serif;
+        font-size: 10pt;
+        padding: 0;
+        margin: 0;
+}
+
+.login {
+        background:transparent url(../images/account-login.svg) no-repeat center center;
+}
+
+.logout {
+        background:transparent url(../images/account-logout.svg) no-repeat center center;
+}
+
+.login, .logout {
+        background-size:cover;
+        display:inline-block;
+        width:32px;
+        height:32px;
+        float:right;
+        margin:16px 32px;
+}
 
 header {
         background-color: @base;
@@ -14,6 +40,26 @@ header > h1 {
         padding-left:32px;
 }
 
-article { 
+article {
         padding:32px;
+}
+
+#admin-login {
+	text-align:center;
+}
+#admin-login > div {
+	margin-bottom:6px;
+}
+#admin-login input[type=text],
+#admin-login input[type=password] {
+	border:1px solid @border;
+	border-radius:2px;
+	padding:4px 8px;
+}
+#admin-login input[type=submit] {
+	border:1px solid @border;
+	background-color:@base;
+	border-radius:2px;
+	color:@white;
+	padding:4px 8px;
 }

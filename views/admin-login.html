@@ -15,7 +15,15 @@
 
 <header><a href="/logout" class="logout"></a><h1>{{title}}</h1></header>
 <article>
-{{content}}
+
+<form method="post" action="/admin" id="admin-login"><input type="hidden" name="action" value="admin-login">
+<div>Admin Login</div>
+<div>{{content}}</div>
+<div><input type="text" name="email" placeholder="Email Address"></div>
+<div><input type="password" name="password" placeholder="Password"></div>
+<div><input type="submit" value="Log in"></div>
+</form>
+
 </article>
 
 
